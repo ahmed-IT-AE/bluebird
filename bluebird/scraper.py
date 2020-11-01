@@ -134,6 +134,10 @@ class BlueBird:
         url = f'https://api.twitter.com/1.1/users/show.json?screen_name={username}'
         return self._get_api_response(url)
     
+    def get_user_by_names(self, usernames):
+        url = f'https://api.twitter.com/1.1/users/lookup.json?screen_name={",".join(usernames)}'
+        return self._get_api_response(url)
+
     def get_user_by_id(self, user_id):
         url = f'https://api.twitter.com/1.1/users/show.json?id={user_id}'
         return self._get_api_response(url)
